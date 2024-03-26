@@ -58,4 +58,33 @@ int main (int argc, char** argv) {
             assert ((i > j ? 1 : 0) == as_greater_than(i, j));
         }
     }
+
+    for (uint16_t i = 0; i < std::numeric_limits<uint8_t>::max(); i++) {
+        assert (static_cast<uint8_t>(~i) == as_not(i));
+    }
+
+    for (uint16_t i = 0; i < std::numeric_limits<uint8_t>::max(); i++) {
+        for (uint16_t j = 0; j < std::numeric_limits<uint8_t>::max(); j++) {
+            assert (j == as_ternary(0, i, j));
+            assert (i == as_ternary(1, i, j));
+        }
+    }
+
+    for (uint16_t i = 0; i < std::numeric_limits<uint8_t>::max(); i++) {
+        for (uint16_t j = 0; j < std::numeric_limits<uint8_t>::max(); j++) {
+            assert ((i & j) == as_and(i, j));
+        }
+    }
+
+    for (uint16_t i = 0; i < std::numeric_limits<uint8_t>::max(); i++) {
+        for (uint16_t j = 0; j < std::numeric_limits<uint8_t>::max(); j++) {
+            assert ((i | j) == as_or(i, j));
+        }
+    }
+
+    for (uint16_t i = 0; i < std::numeric_limits<uint8_t>::max(); i++) {
+        for (uint16_t j = 0; j <= 8; j++) {
+            assert (static_cast<uint8_t>(i << j) == as_left_shift(i, j));
+        }
+    }
 }

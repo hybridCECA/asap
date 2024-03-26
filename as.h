@@ -19,5 +19,10 @@ uint8_t as_not_bits(uint8_t one_a);
 uint8_t as_xor(uint8_t a, uint8_t b);
 uint8_t as_add(uint8_t a, uint8_t b);
 uint8_t as_greater_than(uint8_t a, uint8_t b);
+uint8_t as_not(uint8_t a);
+uint8_t as_and(uint8_t a, uint8_t b);
+uint8_t as_or(uint8_t a, uint8_t b);
+uint8_t as_ternary(uint8_t cond, uint8_t a, uint8_t b);
+uint8_t as_left_shift(uint8_t a, uint8_t amount);
 
 #endif
